@@ -1,0 +1,33 @@
+<h1>Github</h1>
+
+<%= link_to "Back to Homepage", root_path%>
+
+<% unless @profile.length < 30 %>
+
+<div class='container'>
+<div class='info'>
+
+	<p>
+		<%= @profile['login']%>	
+	</p>
+	<p>
+		<%= @profile['id']%>
+	</p>
+	<p>
+		<a href='<%= @profile['html_url']%>'><%= @profile['login']%></a>
+	</p>
+	<p>
+		<%= @profile['public_repos']%>
+	</p>
+</div>
+
+<div class='photo'>
+	<img src='<%= @profile['avatar_url']%>' class='profile_pic'/>
+</div>
+</div>
+<% else%>
+<br>
+<br>
+Invalid User
+
+<% end%>

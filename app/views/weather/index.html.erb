@@ -1,0 +1,41 @@
+
+<h1>Weather in <%= params[:search_term]%></h1>
+
+
+<%= link_to "Back to Homepage", root_path%>
+
+<% unless @profile.length < 12 %>
+
+<div>
+
+	<%= p @profile.length.to_s %>
+	<p>
+		Over All:
+		<%= @profile['weather'][0]['main']%>	
+	</p>
+	<p>
+		Current Temp:
+		<%= @profile['main']['temp']%> F
+	</p>
+	<p>
+		Humidity:
+		<%= @profile['main']['humidity']%> %
+	</p>
+	<p>
+		Sunrise:
+		<% t = Time.at(@profile['sys']['sunrise'])%>
+		<%= p t.strftime("%r")%>
+		<br>
+		<br>
+		Sunset:
+		<% b = Time.at(@profile['sys']['sunset'])%>
+		<%= p b.strftime("%r")%>
+	</p>
+</div>
+
+<% else%>
+<br><br>
+City not found
+
+<% end%>
+

@@ -1,0 +1,26 @@
+<h1>Welcome!</h1>
+
+<div>What is your github username?</div>
+
+<%= form_tag github_index_path do%>
+
+	<%= text_field_tag "search_term", nil, placeholder: 'Username' %>
+	<%= submit_tag "Look Up"%>
+<%end%>
+
+
+
+
+
+<br><br><br><hr><br><br><br>
+
+
+
+
+<div>Maybe you would like to see your current weather?</div>
+
+<%= form_tag weather_index_path do%>
+
+	<%= text_field_tag "search_term", nil, placeholder: 'Your City(US)' %>
+	<%= submit_tag "Look Up"%>
+<%end%>
